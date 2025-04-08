@@ -1,17 +1,28 @@
 **Tutorial: [Build a documented / type-safe API with hono, drizzle, zod, OpenAPI and scalar ](https://www.youtube.com/watch?v=sNh9PoM9sUE)** 
 
-**If pnpm not yet installed:**  
+
+**Install pnpm (if needed):**  
 ```
-npm install pnpm
+npm install pnpm -global
 ```
 
-**Then:** 
+**Add Dependencies:**   
+cd into project directory, then run:
 ```
 pnpm install
-pnpm run dev
 ```
 
+**Create .env file in root**  
+Add values:  
 ```
+NODE_ENV=development
+PORT=9000
+LOG_LEVEL=debug
+```
+
+**Run App:**
+```
+pnpm run dev
 open http://localhost:9000 (or whatever port is defined in env file)
 ```
 

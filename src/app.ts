@@ -1,16 +1,21 @@
 import createApp from "@/lib/create-app";
 
+import configureOpenAPI from "@/lib/configure-open-api";
+import index from "@/routes/index.route"
+
 //re-usable "createApp" function that adds all the middlewares, etc
 const app = createApp();
 
 //Routes...
+const routes = [
+    index,
+];
 
-app.get("/", (c) => {
-    return c.text("Hello Hono!");
+configureOpenAPI(app);
+
+routes.forEach((r) => {
+    app.route("/", r);
 });
 
-app.get('/error', (c) => {
-    throw new Error("This is an error");
-});
 
 export default app;
